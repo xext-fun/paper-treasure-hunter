@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Highlightext PDF Viewer",
+  "version": "0.1.0",
+  "description": "Local PDF keyword and regular-expression highlighting.",
+  "action": { "default_title": "Open Highlightext PDF viewer" },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["storage"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'" }
+}

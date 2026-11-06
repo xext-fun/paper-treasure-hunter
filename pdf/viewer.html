@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Highlightext PDF Viewer</title>
+  <link rel="stylesheet" href="./pdf_viewer.css">
+  <link rel="stylesheet" href="./viewer.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>Highlightext</h1>
+    <div class="open-row"><label class="file-button">Open PDF<input id="file" type="file" accept="application/pdf,.pdf"></label></div>
+    <div class="url-row"><input id="url" type="url" placeholder="https://example.com/file.pdf" aria-label="PDF URL"><button id="open-url" type="button">Open URL</button></div>
+    <label for="keywords" class="section-label">Keywords or phrases</label>
+    <textarea id="keywords" spellcheck="false" placeholder="One per line. Regex: Label :: /pattern/i"></textarea>
+    <div class="button-row"><button id="highlight" type="button" class="primary">Highlight</button><button id="clear" type="button">Clear Highlights</button></div>
+    <div class="preset-row"><select id="preset" aria-label="Terms group"></select><button id="add-preset" type="button">Add terms</button></div>
+    <label class="load-button">Load terms JSON<input id="terms-file" type="file" accept="application/json,.json"></label>
+    <p class="hint">One literal or regex per line. Edit <code>terms/default-terms.json</code> or load your own terms file.</p>
+    <div class="match-heading">Matches: <strong id="match-total">0</strong></div>
+    <ol id="match-list" aria-label="Matches by keyword"></ol>
+    <div class="button-row nav"><button id="previous" type="button">Previous Match</button><button id="next" type="button">Next Match</button></div>
+    <p id="status" role="status"></p>
+  </aside>
+  <main class="viewer-shell">
+    <header class="toolbar">
+      <span id="file-name">No PDF open</span>
+      <div class="toolbar-controls">
+        <button id="zoom-out" type="button" aria-label="Zoom out">−</button><span id="zoom-label">100%</span><button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+        <button id="fit-width" type="button">Fit width</button>
+        <label class="page-control">Page <input id="page-number" type="number" min="1" value="1"> / <span id="total-pages">0</span></label>
+      </div>
+    </header>
+    <div id="pdf-scroll" class="pdf-scroll"><div id="pages" class="pages"><div class="empty">Open a PDF to get started.</div></div></div>
+  </main>
+  <script type="module" src="./viewer.js"></script>
+</body>
+</html>

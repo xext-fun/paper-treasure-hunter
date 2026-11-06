@@ -1,0 +1,19 @@
+{
+  "name": "highlightext-pdf-viewer",
+  "version": "1.0.0",
+  "description": "Local PDF highlighting Chrome extension",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pdfjs-dist": "^6.5.438"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0"
+  },
+  "type": "module"
+}
